@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../header';
+import withAuth from "../auth";
  class Contact extends React.Component {
     render() {
        return (
@@ -12,3 +13,4 @@ import Header from '../header';
     }
  }
  export default Contact;
+ 

@@ -1,31 +1,44 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 
-function Header() {
-  
-  return (
-    <div className="header">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+class Header extends React.Component { 
+  constructor (props) {
+		super(props)
+		this.state = {
+            redirect: false
+		}
+		
+    }
+  logout = () => {
+    localStorage.setItem("name", false);
+    this.setState({redirect: true})
+  }
+  render () {
+    return (
+      <div className="header">
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li className="nav-item">
+                  <a className="nav-link"  onClick={this.logout}>
+                    Logout
+                  </a>
+                </li>
+                <li className="nav-item">
+                    <NavLink className="nav-link" activeClassName="active" to="/contact">
+                      Contact
+                  </NavLink>             
+                </li>            
               <li className="nav-item">
-                <NavLink className="nav-link" exact activeClassName="active" to="/">
-                  Home
+                <NavLink className="nav-link" activeClassName="active" to="/about">
+                  About
                 </NavLink>
               </li>
-              <li className="nav-item">
-                  <NavLink className="nav-link" activeClassName="active" to="/contact">
-                    Contact
-                </NavLink>             
-              </li>            
-            <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="/about">
-                About
-              </NavLink>
-            </li>
-          </ul>
-        </nav> 
-    </div>
-    
-  );
+            </ul>
+          </nav> 
+          {this.state.redirect && <Redirect to={`/`} />}
+      </div>
+      
+    );
+  }
 }
 export default Header;

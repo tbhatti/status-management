@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {setStatus} from '../../redux/actions/status';
 import { NavLink } from "react-router-dom";
 
-class Home extends React.Component {
+class Home extends React.Component { 
    constructor (props) {
 		super(props)
 		this.state = {
@@ -14,8 +14,9 @@ class Home extends React.Component {
     }
    onSubmit = () => {
       console.log('CLICKKKEDDDDDDDDDDDDDDDDDDDDDDD');
-        //this.setState({redirect: true})
-        this.props.dispatch(setStatus({name:'Hello Status'})) 
+        this.setState({redirect: true})
+        this.props.dispatch(setStatus({name:'Hello Status'}))
+        localStorage.setItem("name", true);
     
    }
     render() {
@@ -25,7 +26,9 @@ class Home extends React.Component {
           <NavLink className="nav-link" exact activeClassName="active" to="/about">
             about
          </NavLink>
+         {this.state.redirect && localStorage.getItem("name") === 'true' && <Redirect to={`/about`} />}
           </div>
+          
        )
       
     }
