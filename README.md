@@ -127,3 +127,27 @@ npm i redux-thunk
     │   └── types            # All action types
     │	└── store.js	     # Js file for store
     └── ...
+## `Setup Conditional routes`
+Create a folder inside components 
+├── components                
+    │   ├── auth          
+    │      ├── index.js         
+    └── ...
+Paste the following contents to the file
+```python
+import React, { cloneElement, Children } from 'react'
+import { Route, Redirect } from 'react-router-dom'
+
+const PrivateRoute = ({ children, authed, ...rest }) =>
+  <Route
+    {...rest}
+    render={(props) => localStorage.getItem('name') === 'true' ?
+      <div>
+        {Children.map(children, child => cloneElement(child, { ...child.props }))}
+      </div>
+      :
+      <Redirect to={{ pathname: '/', state: { from: props.location } }} />}
+  />
+
+export default PrivateRoute
+```
