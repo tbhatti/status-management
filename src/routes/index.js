@@ -3,16 +3,14 @@ import Home from '../components/home';
 import Contact from '../components/contact';
 import About from '../components/about';
 import React from 'react';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { HashRouter, BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
 function Routes() {
     return (
-		<BrowserRouter>
+		<HashRouter>
 			<div>
-				<Header />
-				<hr/>
 				<div className="flex-line">
 					<div className="content"> 
 						<Switch>				
@@ -25,7 +23,7 @@ function Routes() {
 				</div>   
 				<Footer />
     		</div> 
-	  	</BrowserRouter>
+	  	</HashRouter>
     )
 }
 export default Routes;

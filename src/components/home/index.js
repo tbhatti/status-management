@@ -1,5 +1,8 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {setStatus} from '../../redux/actions/status';
+import { NavLink } from "react-router-dom";
 
 class Home extends React.Component {
    constructor (props) {
@@ -11,17 +14,20 @@ class Home extends React.Component {
     }
    onSubmit = () => {
       console.log('CLICKKKEDDDDDDDDDDDDDDDDDDDDDDD');
-        this.setState({redirect: true})
+        //this.setState({redirect: true})
+        this.props.dispatch(setStatus({name:'Hello Status'})) 
     
    }
     render() {
        return (
           <div>
           <button onClick={this.onSubmit}>Login</button>
-          {this.state.redirect && <Redirect to="/contact" />}
+          <NavLink className="nav-link" exact activeClassName="active" to="/about">
+            about
+         </NavLink>
           </div>
        )
       
     }
  }
- export default Home;
+ export default connect(state => state)(Home);

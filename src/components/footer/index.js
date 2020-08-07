@@ -2,8 +2,8 @@ import React from "react";
 
 function Footer() {
   return (
-    <div>
-      <h1>This is footer</h1>
+    <div className="footer-container">
+      <div>Copyright © 2020 eStatus</div>
     </div>
   );
 }

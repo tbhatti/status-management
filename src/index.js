@@ -6,6 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import  '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 import {Route, Router, browserHistory} from 'react-router'
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 // main routes
 import Routes from './routes';
@@ -13,7 +15,9 @@ import Routes from './routes';
 
 ReactDOM.render(
   <React.StrictMode>
-   <Routes />
+    <Provider store={store}>
+      <Routes />
+	  </Provider>,    
   </React.StrictMode>,
   document.getElementById('root')
 );

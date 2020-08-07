@@ -4,11 +4,12 @@ import Home from './components/home';
 
 function App() {
   return (
-  <div className="App">
-    <div>
-      <h1>Home...</h1>
-    </div>
-  </div>    
+  // <div className="App">
+  //   <div>
+  //     <h1>Home...</h1>
+  //   </div>
+  // </div>    
+  <Home></Home>
   );
 }
 
