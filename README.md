@@ -67,7 +67,7 @@ module.exports = {
 
 ## `Setup bable`
 Create babel.config.js at root folder and paste following contents
-python```
+```python
 module.exports = {
     presets: [ "@babel/preset-env", "@babel/preset-react" ],
     plugins: [ "@babel/plugin-transform-arrow-functions", "@babel/plugin-proposal-class-properties" ]
