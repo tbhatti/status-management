@@ -113,4 +113,17 @@ function Routes() {
 }
 export default Routes;
 ```
-    
+## `Setup Redux`
+```python
+npm i redux
+npm i react-redux
+npm i redux-thunk
+```
+### Create following folder structure
+
+    ├── redux                
+    │   ├── actions          # All actions
+    │   ├── reducers         # All reducers
+    │   └── types            # All action types
+    │	└── store.js	     # Js file for store
+    └── ...
