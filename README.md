@@ -27,7 +27,8 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Setup webpack
+## `Setup webpack`
+Create webpack.config.js at root folder and paste following contents for less, css etc.
 ```python
 var path = require('path');
 var HtmlWebpackPlugin =  require('html-webpack-plugin');
@@ -61,5 +62,14 @@ module.exports = {
         })
     ]
 
+}
+```
+
+## `Setup bable`
+Create babel.config.js at root folder and paste following contents
+python```
+module.exports = {
+    presets: [ "@babel/preset-env", "@babel/preset-react" ],
+    plugins: [ "@babel/plugin-transform-arrow-functions", "@babel/plugin-proposal-class-properties" ]
 }
 ```
