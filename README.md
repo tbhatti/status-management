@@ -92,23 +92,23 @@ import Footer from '../components/footer';
 
 function Routes() {
     return (
-		<BrowserRouter>
-			<div>
-				<Header />
-				<hr/>
-				<div className="flex-line">
-					<div className="content"> 
-						<Switch>				
-							<Route exact path='/' component={App}/>			  
-							<Route path='/home' component={Home}/>
-							<Route path='/contact' component={Contact}/>
-							<Route path='/about' component={About}/>
-						</Switch> 
-					</div>
-				</div>   
-				<Footer />
-    		</div> 
-	  	</BrowserRouter>
+	<BrowserRouter>
+	<div>
+	<Header />
+	<hr/>
+	<div className="flex-line">
+	<div className="content"> 
+	<Switch>				
+	<Route exact path='/' component={App}/>			  
+	<Route path='/home' component={Home}/>
+	<Route path='/contact' component={Contact}/>
+	<Route path='/about' component={About}/>
+	</Switch> 
+	</div>
+	</div>   
+	<Footer />
+	</div> 
+	</BrowserRouter>
     )
 }
 export default Routes;
