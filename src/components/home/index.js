@@ -9,28 +9,20 @@ class Home extends React.Component {
 		super(props)
 		this.state = {
             redirect: false
-		}
-		
+		}		
     }
-   onSubmit = () => {
-      console.log('CLICKKKEDDDDDDDDDDDDDDDDDDDDDDD');
+    onLogin = () => {     
         this.setState({redirect: true})
         this.props.dispatch(setStatus({name:'Hello Status'}))
-        localStorage.setItem("name", true);
-    
+        localStorage.setItem("name", true);    
    }
     render() {
        return (
           <div>
-          <button onClick={this.onSubmit}>Login</button>
-          <NavLink className="nav-link" exact activeClassName="active" to="/about">
-            about
-         </NavLink>
+          <button onClick={this.onLogin}>Login</button>
          {this.state.redirect && localStorage.getItem("name") === 'true' && <Redirect to={`/about`} />}
-          </div>
-          
-       )
-      
+          </div>          
+       )      
     }
  }
  export default connect(state => state)(Home);
