@@ -18,10 +18,6 @@ class Home extends React.Component {
    }
     render() {
        return (
-         //  <div>
-         //  <button onClick={this.onLogin}>Login</button>
-         // {this.state.redirect && localStorage.getItem("name") === 'true' && <Redirect to={`/about`} />}
-         //  </div>
           <div className="container">
              <div className="row">
              <form>
@@ -41,7 +37,7 @@ class Home extends React.Component {
                <button type="submit" className="btn btn-primary" onClick={this.onLogin}>Submit</button>
             </form>
              </div>
-             {this.state.redirect && localStorage.getItem("name") === 'true' && <Redirect to={`/about`} />}
+             {this.state.redirect && localStorage.getItem("name") === 'true' && <Redirect to={`/home`} />}
           </div>         
        )      
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.less';
-import Home from './components/home';
+import Login from './components/login';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
   //     <h1>Home...</h1>
   //   </div>
   // </div>    
-  <Home></Home>
+  <Login></Login>
   );
 }
 
