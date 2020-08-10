@@ -151,3 +151,12 @@ const PrivateRoute = ({ children, authed, ...rest }) =>
 
 export default PrivateRoute
 ```
+## `Setup Bootstrap`
+```python
+npm i bootstrap
+```
+In index.js add following lines
+```python
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import  '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
+```
